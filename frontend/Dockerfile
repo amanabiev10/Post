@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Baue die Produktionsversion
-RUN npm build
+RUN npm run build
 
 # Exponiere den Port
 EXPOSE 5173
