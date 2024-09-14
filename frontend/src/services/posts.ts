@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Definiere den API-Endpoint deines Django-Backends
-const API_URL = 'http://www.zeniton.de/api/posts/';
+const API_URL = 'http://django_backend:8000/api/posts/';
 
 // Typ für einen Post
 export interface Post {
