@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9m=y1$_v=1!!c_lwvmwnz5hrk4vxtgx5tb*srf3&gczy_6k*(*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '192.168.178.24', 'www.zeniton.de', 'zeniton.de']
 
 
 # Application definition
