@@ -6,8 +6,8 @@ FROM node:20.16.0
 # Arbeitsverzeichnis im Container
 WORKDIR /app
 
-# Kopiere package.json und yarn.lock und installiere Abhängigkeiten
-COPY package.json package.json
+# Kopiere package.json und package-lock.json und installiere Abhängigkeiten
+COPY package.json package-lock.json ./
 RUN npm install
 
 # Kopiere den restlichen Code des Projekts
@@ -19,5 +19,5 @@ RUN npm run build
 # Exponiere den Port
 EXPOSE 5173
 
-# Vite Server starten
-CMD ["npm", "dev", "--host"]
+# Vite-Server starten
+CMD ["npm", "run", "dev", "--", "--host"]
