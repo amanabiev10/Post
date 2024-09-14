@@ -74,7 +74,7 @@ ROOT_URLCONF = 'backend.urls'
 # Erlaube Anfragen von spezifischen Domains
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # URL deines React-Frontends während der Entwicklung
-    "http://www.zeniton.de/",
+    "http://www.zeniton.de",
 ]
 
 # Erlaube spezifische Methoden (GET, POST, etc.)
