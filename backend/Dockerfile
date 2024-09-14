@@ -17,12 +17,5 @@ COPY . /app
 # Setze die Umgebungsvariable für Django
 ENV DJANGO_SETTINGS_MODULE=backend.settings
 
-# Kopiere das Entry-Point-Skript und setze die Ausführungsrechte
-COPY entrypoint.sh /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh
-
-# Setze das Entry-Point-Skript
-ENTRYPOINT ["/app/entrypoint.sh"]
-
-# Django-Server starten
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Führt die Django-Kommandos aus: Migrationen und Starten des Servers
+CMD ["sh", "-c", "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
