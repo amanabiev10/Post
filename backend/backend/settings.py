@@ -27,9 +27,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['www.zeniton.de', 'zeniton.de']
 
-SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
-CSRF_COOKIE_SECURE = True  # Setze das CSRF-Cookie nur für HTTPS
-SESSION_COOKIE_SECURE = True  # Setze das Session-Cookie nur für HTTPS
+SECURE_HSTS_SECONDS = 31536000  # 1 Jahr
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
 
 
 # Application definition
@@ -128,7 +130,7 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB', 'mydatabase'),
         'USER': os.getenv('POSTGRES_USER', 'myuser'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'mypassword'),
-        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
+        'HOST': os.getenv('POSTGRES_HOST', 'postgres'),
         'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
