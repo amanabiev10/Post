@@ -23,9 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9m=y1$_v=1!!c_lwvmwnz5hrk4vxtgx5tb*srf3&gczy_6k*(*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '192.168.178.24', 'www.zeniton.de', 'zeniton.de']
+ALLOWED_HOSTS = ['www.zeniton.de', 'zeniton.de']
+
+SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
+CSRF_COOKIE_SECURE = True  # Setze das CSRF-Cookie nur für HTTPS
+SESSION_COOKIE_SECURE = True  # Setze das Session-Cookie nur für HTTPS
 
 
 # Application definition
